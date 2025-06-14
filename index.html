@@ -26,9 +26,9 @@
   <div class="container">
     <br>
     <div style="text-align: center;">  
-      <h1>RegNeRF</h1>
-      <h3> Regularizing Neural Radiance Fields for View Synthesis from Sparse Inputs</h3>
-      <div style="margin-top: 15px;">
+      <h1>DiTalker</h1>
+      <h3> DiTalker: A Unified DiT-based Framework for High-Quality and Speaking Styles Controllable Portrait Animation</h3>
+      <!-- <div style="margin-top: 15px;">
         <span style="margin-right: 15px; font-size: 1.3em;"><a href="https://m-niemeyer.github.io/" target="_blank">Michael Niemeyer<sup>1,2,3</sup></a></span>
         <span style="margin-right: 15px; font-size: 1.3em;"><a href="https://jonbarron.info/" target="_blank">Jonathan T. Barron<sup>3</sup></a></span>
         <span style="margin-right: 15px; font-size: 1.3em;"><a href="https://bmild.github.io/" target="_blank">Ben Mildenhall<sup>3</sup></a></span>
@@ -46,9 +46,9 @@
       </div>
       <div>
         <span style="margin-right: 10px; font-size: 1.3em;">CVPR 2022 (oral)</span>
-      </div>
+      </div> -->
     </div>
-    <div class="text-center" style="font-size: 1.5em; margin-top: 25px;">
+    <!-- <div class="text-center" style="font-size: 1.5em; margin-top: 25px;">
       <a class="btn btn-primary btn-lg" target="_blank"
         href="https://drive.google.com/file/d/1S_NnmhypZjyMfwqcHg-YbWSSYNWdqqlo/view?usp=sharing" role="button"
         style="margin-right: 10px; margin-bottom: 10px;">Paper</a>
@@ -67,17 +67,30 @@
       <a class="btn btn-primary btn-lg" target="_blank"
         href="https://github.com/google-research/google-research/tree/master/regnerf" role="button"
         style="margin-bottom: 10px;">Code</a>
+    </div> -->
+    <div class="text-center" style="font-size: 1.5em; margin-top: 25px;">
+      <a class="btn btn-primary btn-lg" href="javascript:void(0);" role="button"
+        style="margin-right: 10px; margin-bottom: 10px;">Paper</a>
+      <a class="btn btn-primary btn-lg" href="javascript:void(0);" role="button"
+        style="margin-right: 10px; margin-bottom: 10px;">Video</a>
+      <a class="btn btn-primary btn-lg" href="javascript:void(0);" role="button"
+        style="margin-right: 10px; margin-bottom: 10px;">Supplementary</a>
+      <a class="btn btn-primary btn-lg" href="javascript:void(0);" role="button"
+        style="margin-right: 10px; margin-bottom: 10px;">Arxiv</a>
+      <a class="btn btn-primary btn-lg" href="javascript:void(0);" role="button"
+        style="margin-right: 10px; margin-bottom: 10px;">Poster</a>
+      <a class="btn btn-primary btn-lg" href="javascript:void(0);" role="button"
+        style="margin-bottom: 10px;">Code</a>
     </div>
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="embed-responsive embed-responsive-21by9">
           <video controls loop muted autoplay class="embed-responsive-item">
-            <source src="gfx/room_videos/n3_text.mp4" type="video/mp4">
+            <source src="C:\Users\fenghe\Desktop\ditalker\videos\speaking_style_emotion_high_quality.mp4" type="video/mp4">
           </video>
         </div>
         <p class="text-center" style="font-size: 1.5em;">
-          <span style="font-weight: bold;">RegNeRF</span> enables realistic view synthesis from as few as 3 input
-          images.
+          <span style="font-weight: bold;">DiTalker</span> generates diverse portrait animation videos.
         </p>
       </div>
     </div>
@@ -86,35 +99,35 @@
         Abstract
       </h2>
       <p style="font-style: italic; margin-bottom: 5px;">
-        Neural Radiance Fields (NeRF) have emerged as a powerful representation for the task of novel view synthesis due
-        to their simplicity and state-of-the-art performance. Though NeRF can produce photorealistic renderings of
-        unseen viewpoints when many input views are available, its performance drops significantly when this number is
-        reduced. We observe that the majority of artifacts in sparse input scenarios are caused by errors in the
-        estimated scene geometry, and by divergent behavior at the start of training. We address this by regularizing
-        the geometry and appearance of patches rendered from unobserved viewpoints, and annealing the ray sampling space
-        during training. We additionally use a normalizing flow model to regularize the color of unobserved viewpoints.
-        Our model outperforms not only other methods that optimize over a single scene, but in many cases also
-        conditional models that are extensively pre-trained on large multi-view datasets.
+        Portrait animation aims to synthesize talking videos from a static reference face, conditioned on audio and style frame cues (\eg, emotion and head poses), while ensuring precise lip synchronization and faithful reproduction of speaking styles.
+Existing diffusion-based portrait animation methods mainly focus on  lip synchronization or static emotion transformation, often overlooking dynamic styles such as  head movements.
+Moreover, most of these methods rely on dual U-Net architecture, which preserves  identity consistency but incurs additional computational overhead.
+To this end, we propose DiTalker, a unified DiT-based framework for speaking style controllable portrait animation.
+We design a Style-Emotion Encoding Module that employs two separate branches: a style branch extracts style embeddings for head poses and movements, and an emotion branch extracts emotion features.
+We further introduce an Audio-Style Fusion Module that decouples audio  and speaking styles via two parallel cross attention layers, using these features to guide the animation process.
+To enhance the quality of results, we further introduce two optimization constraints: one to improve lip synchronization and the other to preserve fine-grained identity details.
+Extensive experiments  demonstrate the superiority of DiTalker in terms of lip synchronization and speaking style controllability.
       </p>
       <p style="font-size: 1.2em; margin-top: 0px;">
-        <span style="font-weight: bold;">TL;DR:</span> We regularize unseen views during optimization to enable view
-        synthesis from sparse inputs with as few as 3 input images.
+        <span style="font-weight: bold;">TL;DR:</span> We propose DiTalker, a DiT-based model for portrait animation that achieves precise lip sync and dynamic style control through dedicated audio-style fusion, outperforming existing methods..
       </p>
     </div>
-    <div style="margin-top:10px;">
+    <!-- <div style="margin-top:10px;">
       <h2 class="text-center">
         Video
       </h2>
       <div class="embed-responsive embed-responsive-16by9">
         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/QyyyvA4-Kwc" allowfullscreen></iframe>
       </div>
-    </div>
+    </div> -->
+
+
     <div style="margin-top: 50px;">
       <div class="text-center">
         <h2>
           Method Overview
         </h2>
-        <img src="gfx/teaser.svg" width=100% class="img-fluid" alt="Responsive image">
+        <img src="gfx\main-0409-1.png" width=100% class="img-fluid" alt="Responsive image">
       </div>
       <div style="margin-top: 35px;">
         <p>
@@ -136,62 +149,71 @@
         </p>
       </div>
     </div>
+
     <div style="margin-top:50px;">
       <h2 class="text-center">
-        Results
+        Video Results
       </h2>
-      <h4>View Synthesis from 3 Input Views</h4>
-      <p>
-        While mip-NeRF leads to degenerate view synthesis and predicted scene geometry, our method enables realistic
-        view synthesis from 3 input views.
-      </p>
+      <h4>Qualitative comparison with baseline (lip synchronization)</h4>
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12 gallery">
           <div class="embed-responsive embed-responsive-21by9">
             <video controls loop muted autoplay class="embed-responsive-item">
-              <source src="gfx/room_videos/n3_text.mp4" type="video/mp4">
+              <source src="C:\Users\fenghe\Desktop\ditalker\videos\speaking_style_head_movements.mp4" type="video/mp4">
             </video>
           </div>
         </div>
       </div>
-      <h4>View Synthesis from 6 Input Views</h4>
-      <p>
-        For 6 input views, mip-NeRF improves but predicted renderings and the optimized scene geometry still contain
-        floating artifacts. Our approach leads to smooth predicted scene geometry and realistic novel views.
-      </p>
+      <h4>Qualitative comparison with baseline (speaking style controllability)</h4>
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12 gallery">
           <div class="embed-responsive embed-responsive-21by9">
             <video controls loop muted autoplay class="embed-responsive-item">
-              <source src="gfx/room_videos/n6_text.mp4" type="video/mp4">
+              <source src="C:\Users\fenghe\Desktop\ditalker\videos\speaking_style_head_movements.mp4" type="video/mp4">
             </video>
           </div>
         </div>
       </div>
-      <h4>View Synthesis from 9 Input Views</h4>
-      <p>
-        For 9 input views, mip-NeRF and our method both lead to high-quality view synthesis. For mip-NeRF, small
-        floating artfiacts for far-away novel views near the table are still visible while our predicted scene geometry
-        appears more realistic.
-      </p>
+      <h4>Qualitative comparison with baseline (noisy audio input)</h4>
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12 gallery">
           <div class="embed-responsive embed-responsive-21by9">
             <video controls loop muted autoplay class="embed-responsive-item">
-              <source src="gfx/room_videos/n9_text.mp4" type="video/mp4">
+              <source src="C:\Users\fenghe\Desktop\ditalker\videos\speaking_style_head_movements.mp4" type="video/mp4">
             </video>
           </div>
         </div>
       </div>
-      <div style="margin-top:50px;">
+      <h4>Qualitative comparison with baseline (strong accents)</h4>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 gallery">
+          <div class="embed-responsive embed-responsive-21by9">
+            <video controls loop muted autoplay class="embed-responsive-item">
+              <source src="C:\Users\fenghe\Desktop\ditalker\videos\speaking_style_head_movements.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <h4>Qualitative comparison with baseline (highly emotional speech)</h4>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 gallery">
+          <div class="embed-responsive embed-responsive-21by9">
+            <video controls loop muted autoplay class="embed-responsive-item">
+              <source src="C:\Users\fenghe\Desktop\ditalker\videos\speaking_style_head_movements.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div style="margin-top:50px;">
         <h2 class="text-center">
           More Results
         </h2>
-        <!-- <p style="margin-top: 10px;">
+         <p style="margin-top: 10px;">
           For more results, check out <a href="comparisons.html" target="_blank">the baseline comparisons</a> or <a
             href="ours.html" target="_blank">more view synthesis results from our method</a>.
         </p> -->
-        <p>For more results, check out:</p>
+        <!-- <p>For more results, check out:</p>
         <div class="row">
           <div class="col-md-6 col-sm-6 col-xs-6 gallery">
             <div class="text-center">
@@ -210,8 +232,8 @@
             </div>
           </div>
         </div>
-      </div>
-      <div>
+      </div> --> 
+      <!-- <div>
         <h2 class="text-center" style="margin-top: 30px;">
           Citation
         </h2>
@@ -226,7 +248,7 @@
           year      = {2022},
         }
       </pre>
-      </div>
+      </div> -->
       
       <div>
         <h2 class="text-center" style="margin-top: 30px;">
