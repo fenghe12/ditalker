@@ -1,7 +1,6 @@
-# Project Page Website for RegNeRF
+# Project Page Website for DiTalker
 
-This repository contains the fully-responsive and easy-to-adapt project page for [the RegNeRF project]([https://m-niemeyer.github.io/). It is very easy to adapt to your needs, easy to maintain, and displayed correctly on many devices due to Bootstrap's responsiveness.
-
+This repository is forked from the original RegNeRF project page(https://m-niemeyer.github.io/). If you find it useful or wish to reuse it, please consider visiting and supporting the original repository
 ## Credits
 
 If you find the template useful, please consider adding a note to this resposity. Thanks!
